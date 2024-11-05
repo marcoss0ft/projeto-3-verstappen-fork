@@ -1,0 +1,52 @@
+.race-results-driver {
+    border-collapse: collapse;
+    font-size: 1rem;
+    font-family: 'f1-regular', sans-serif;
+    color: white;
+    background-color: #333;
+    border-radius: 0.5rem;
+    margin-left: 8rem;
+    margin-top: 1rem;
+    width: 40%;
+    height: auto;
+}
+
+.race-results-driver thead tr {
+    font-size: 1.2rem; 
+    color: #FF1D00;
+    -webkit-text-stroke: 0.02rem white;
+    text-align: center;
+    font-family: 'f1-bold', sans-serif;
+}
+
+.race-results-driver th, .race-results-driver td {
+    padding: 0.34rem; 
+    text-align: center;
+}
+
+.loading {
+    font-size: 1rem; 
+    font-family: 'f1-regular', sans-serif;
+    color: white;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); 
+}
+
+
+@media (max-height: 768px) {
+    .race-results-driver {
+        font-size: 0.8rem; 
+        margin-left: 5rem;
+        margin-top:-1.5rem;
+        width:38%;
+    }
+
+    .race-results-driver th,  .race-results-driver td {
+        padding: 0.27rem;
+    }
+
+    .race-results-driver thead tr {
+        font-size: 0.9rem;
+    }
+}

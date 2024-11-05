@@ -1,0 +1,101 @@
+@font-face {
+    font-family: 'f1-regular';
+    src: url('/assets/fonts/Formula1-Regular.otf') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+.team-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+.team-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    background-color: #333;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-left: 5rem;
+}
+
+.team-logo {
+    width: 6.25rem;
+    height: auto;
+    cursor:pointer;
+}
+
+.team-name {
+    font-size: 2rem;
+    color: white;
+    font-family: 'f1-bold';
+}
+
+.team-stats {
+    display: flex;
+    gap: 1rem;
+    color: white;
+    font-family: 'f1-regular';
+    align-items: center;
+}
+
+.drivers-section {
+    width: 40%;
+    margin-left: 2rem;
+}
+
+.drivers-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-left: 5rem;
+}
+
+
+.driver-card-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    border-radius: 0.9375rem; 
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.driver-card-img {
+    font-family: 'f1-regular';
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.driver-card-img:hover {
+    transform: scale(1.05);
+}
+
+.drivers-title {
+    font-family: 'f1-regular';
+    font-size: 3rem;
+    color: white;
+    margin-left: 5rem;
+}
+
+
+.data-body {
+    display: flex;
+    align-items: stretch; 
+    margin-top: 2rem;
+}
+
+
+.race-results,
+.drivers-section {
+    flex: 1; 
+}
+
+.race-results {
+    height: 100%;
+    margin-left: 5rem;
+}

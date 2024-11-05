@@ -1,0 +1,127 @@
+@font-face {
+    font-family: 'f1-regular';
+    src: url('/assets/fonts/Formula1-Regular.otf') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'f1-bold';
+    src: url('/assets/fonts/Formula1-Bold.otf') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+.rosto {
+    max-width: 37%;
+    height: auto;
+    position: absolute;
+    bottom: 0; 
+}
+
+
+.container {
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center; 
+}
+
+
+.flag{
+    width: 5%;
+    position: absolute;
+    top: 33%;
+    right:3%;
+}
+
+.firstname{
+    font-family: 'f1-regular', sans-serif;
+    font-size: 4rem;
+    color: white;
+}
+
+.lastname{
+    font-family: 'f1-bold', sans-serif;
+    font-size: 4rem;
+    color: white;
+}
+
+.name{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 0.5rem;
+}
+
+.name-and-number {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end; 
+    gap: 1rem; 
+}
+
+.team {
+    width: 0%;
+}
+
+.number{
+    width:17%;
+    align-self: flex-end;
+    margin-right: 1rem;
+}
+
+.position-and-points{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; 
+    gap: 1.5rem;
+    position: absolute;
+    bottom: 4%;
+    right: 33%;
+}
+
+
+.points-and-pts{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    gap: 1rem; 
+}
+
+.base-stats{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; 
+    gap: 3rem;
+    position: absolute;
+    top: 15%;
+    right: 53%;
+    background-color: #333;
+    border-radius: 0.5rem;
+    width: 42%;
+    height: 10%;
+}
+
+
+.base-stats-font{
+    font-size: .8rem;
+    font-family: 'f1-regular', sans-serif;
+    color: white
+}
+
+.team-logo{
+    cursor: pointer;
+}
+
+.loading {
+    font-size: 1rem; 
+    font-family: 'f1-regular', sans-serif;
+    color: white;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); 
+}

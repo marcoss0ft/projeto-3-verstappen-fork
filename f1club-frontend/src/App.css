@@ -1,0 +1,10 @@
+:root {
+    --sidebar-bg-color: #807F7F;
+    --background-color: #5A5A5A;
+    --icon-bg-color: #FF1D00;
+    --appbar-bg-color: #FF1D00;
+}
+
+body {
+    background-color: var(--background-color);
+}

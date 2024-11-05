@@ -1,0 +1,40 @@
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 3.75rem;
+    height: 100%;
+    background-color: var(--sidebar-bg-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1.25rem 0;
+    box-shadow: 0.3125rem 0.25rem 0.9375rem 0 rgba(0, 0, 0, 0.5); 
+}
+
+.icon {
+    width: 1.875rem; 
+    height: 1.875rem;
+    padding: 0.5rem;
+    margin-bottom: 3.125rem; 
+    background-color: var(--icon-bg-color); 
+    border-radius: 100%; 
+    border: none; 
+    cursor: pointer;
+}
+
+.sidebar .spacer {
+    flex-grow: 1;
+}
+
+button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+button:focus {
+    outline: none;
+}
