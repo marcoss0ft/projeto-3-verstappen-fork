@@ -1,41 +1,9 @@
 import "./App.css";
 import AppBar from "./components/AppBar";
 import SideBar from "./components/SideBar";
-import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import teamColors from "./components/TeamColors";
-
-function applyTeamColors(teamId) {
-  const colors = teamColors[teamId];
-  if (colors) {
-    document.documentElement.style.setProperty(
-      "--sidebar-bg-color",
-      colors.sidebarBgColor
-    );
-    document.documentElement.style.setProperty(
-      "--icon-bg-color",
-      colors.iconBgColor
-    );
-    document.documentElement.style.setProperty(
-      "--appbar-bg-color",
-      colors.appbarBgColor
-    );
-    document.documentElement.style.setProperty(
-      "--background-color",
-      colors.backgroundColor
-    );
-    console.log("Cores aplicadas:", colors);
-  }
-}
 
 function App() {
-  useEffect(() => {
-    const favoriteTeam = localStorage.getItem("favoriteTeam");
-    if (favoriteTeam) {
-      applyTeamColors(favoriteTeam);
-    }
-  }, []);
-
   const navigate = useNavigate();
   const handleNavigation = (path) => {
     navigate(path);

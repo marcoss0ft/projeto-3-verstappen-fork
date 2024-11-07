@@ -33,7 +33,7 @@
     justify-content: center;
 }
 
-.race-results {
+.race-results-results {
     border-collapse: collapse;
     font-size: 1rem;
     font-family: 'f1-regular', sans-serif;
@@ -46,7 +46,7 @@
     height: auto;
 }
 
-.race-results thead tr {
+.race-results-results thead tr {
     font-size: 1.2rem; 
     color: #FF1D00;
     -webkit-text-stroke: 0.02rem white;
@@ -54,7 +54,7 @@
     font-family: 'f1-bold', sans-serif;
 }
 
-.race-results th, .race-results td {
+.race-results-results th, .race-results-results td {
     padding: 0.34rem; 
     text-align: center;
 }
@@ -70,17 +70,17 @@
 
 
 @media (max-height: 768px) {
-    .race-results {
+    .race-results-results {
         font-size: 1rem; 
         margin-left: 5rem;
         width:50%;
     }
 
-    .race-results th,  .race-results td {
+    .race-results-results th,  .race-results-results td {
         padding: 0.27rem;
     }
 
-    .race-results thead tr {
+    .race-results-results thead tr {
         font-size: 0.9rem;
     }
 }

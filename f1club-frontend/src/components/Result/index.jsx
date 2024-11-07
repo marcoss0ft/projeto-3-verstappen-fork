@@ -44,7 +44,7 @@ export default function Result() {
                     <h2 className="subtitle2">{race.date}</h2>
                     <h2 className="subtitle2">{circuit.circuitName}, {circuit.Location.locality}, {circuit.Location.country}</h2>
                     </div>
-                    <table className="race-results">
+                    <table className="race-results-results">
                         <thead>
                             <tr>
                                 <th>Position</th>

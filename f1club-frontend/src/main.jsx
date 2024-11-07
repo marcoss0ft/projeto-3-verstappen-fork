@@ -16,6 +16,15 @@ import Standings from './components/Standings';
 import Results from './components/Results/index.jsx';
 import Result from './components/Result/index.jsx';
 import './index.css';
+import ApplyTeamColors from './components/ApplyTeamColors/index.jsx';
+
+// Aplique as cores ao carregar a aplicação
+const favoriteTeam = localStorage.getItem("favoriteTeam");
+if (favoriteTeam) {
+  ApplyTeamColors(favoriteTeam);
+} else {
+  ApplyTeamColors(null); // Cores padrão se não houver time favorito
+}
 
 const router = createBrowserRouter([
   {
@@ -67,5 +76,5 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <RouterProvider router={router} />
-  </React.StrictMode>,
-)
+  </React.StrictMode>
+);

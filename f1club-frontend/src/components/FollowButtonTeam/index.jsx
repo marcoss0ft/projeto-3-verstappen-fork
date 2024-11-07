@@ -3,28 +3,8 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Popup from "../Popup";
 import "./index.css";
-import teamColors from "../TeamColors";
+import ApplyTeamColors from "../ApplyTeamColors";
 
-function applyTeamColors(teamId) {
-    if (teamId === null) {
-
-        document.documentElement.style.setProperty('--sidebar-bg-color', '#807F7F');
-        document.documentElement.style.setProperty('--icon-bg-color', '#FF1D00');
-        document.documentElement.style.setProperty('--appbar-bg-color', '#FF1D00');
-        document.documentElement.style.setProperty('--background-color', '#5A5A5A');
-        console.log('Cores redefinidas para os valores padrão.');
-        return;
-    }
-
-    const colors = teamColors[teamId];
-    if (colors) {
-      document.documentElement.style.setProperty('--sidebar-bg-color', colors.sidebarBgColor);
-      document.documentElement.style.setProperty('--icon-bg-color', colors.iconBgColor);
-      document.documentElement.style.setProperty('--appbar-bg-color', colors.appbarBgColor);
-      document.documentElement.style.setProperty('--background-color', colors.backgroundColor);
-      console.log('Cores aplicadas:', colors);
-    }
-}
 
 export default function FollowButtonTeam({ teamId }) {
     const navigate = useNavigate();
@@ -47,7 +27,7 @@ export default function FollowButtonTeam({ teamId }) {
                 if (followedTeam) {
                     setIsFollowing(true);
                     setTeamFollowingId(followedTeam.id);
-                    applyTeamColors(teamId); 
+                    ApplyTeamColors(teamId); 
                 } else {
                     setIsFollowing(false);
                 }
@@ -63,7 +43,7 @@ export default function FollowButtonTeam({ teamId }) {
                 if (followedTeam) {
                     setIsFollowing(true);
                     setTeamFollowingId(followedTeam.id);
-                    applyTeamColors(teamId); 
+                    ApplyTeamColors(teamId); 
                 } else {
                     setIsFollowing(false);
                 }
@@ -82,7 +62,7 @@ export default function FollowButtonTeam({ teamId }) {
                     setIsFollowing(false);
                     setTeamFollowingId(null);
                     localStorage.removeItem("favoriteTeam");
-                    applyTeamColors(null); // Remove as cores se desfavoritar
+                    ApplyTeamColors(null); // Remove as cores se desfavoritar
                 })
                 .catch((error) => {
                     console.error("Erro ao deixar de seguir piloto:", error);
@@ -94,7 +74,7 @@ export default function FollowButtonTeam({ teamId }) {
                     setIsFollowing(false);
                     setTeamFollowingId(null);
                     localStorage.removeItem("favoriteTeam");
-                    applyTeamColors(null); // Remove as cores se desfavoritar
+                    ApplyTeamColors(null); // Remove as cores se desfavoritar
                 })
                 .catch((error) => {
                     console.error("Erro ao deixar de seguir piloto:", error);
@@ -139,7 +119,7 @@ export default function FollowButtonTeam({ teamId }) {
                 setIsFollowing(true);
                 setTeamFollowingId(response.data.id);
                 localStorage.setItem("favoriteTeam", teamId);
-                applyTeamColors(teamId); // Aplica as novas cores
+                ApplyTeamColors(teamId); // Aplica as novas cores
                 setShowPopup(false);
             })
             .catch((error) => {
@@ -152,7 +132,7 @@ export default function FollowButtonTeam({ teamId }) {
             setIsFollowing(true);
             setTeamFollowingId(response.data.id);
             localStorage.setItem("favoriteTeam", teamId);
-            applyTeamColors(teamId); // Aplica as novas cores
+            ApplyTeamColors(teamId); // Aplica as novas cores
             setShowPopup(false);
         })
         .catch((error) => {
