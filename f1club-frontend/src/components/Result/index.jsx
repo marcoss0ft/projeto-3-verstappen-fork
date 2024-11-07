@@ -51,6 +51,7 @@ export default function Result() {
                                 <th>Driver</th>
                                 <th>Team</th>
                                 <th>Time</th>
+                                <th>Status</th>
                                 <th>Points</th>
                             </tr>
                         </thead>
@@ -61,6 +62,7 @@ export default function Result() {
                                     <td>{result.Driver.givenName} {result.Driver.familyName}</td>
                                     <td>{result.Constructor.name}</td>
                                     <td>{result.Time ? result.Time.time : "N/A"}</td>
+                                    <td>{result.status}</td>
                                     <td>{result.points}</td>
                                 </tr>
                             ))}
