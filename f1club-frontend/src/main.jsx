@@ -13,6 +13,8 @@ import Register from './components/Register';
 import Favorites from './components/Favorites';
 import Team from './components/Team';
 import Standings from './components/Standings';
+import Results from './components/Results/index.jsx';
+import Result from './components/Result/index.jsx';
 import './index.css';
 
 const router = createBrowserRouter([
@@ -51,6 +53,14 @@ const router = createBrowserRouter([
   {
     path: "/standings/",
     element: <Standings />
+  },
+  {
+    path: "/results/",
+    element: <Results />
+  },
+  {
+    path: "/results/:resultId/",
+    element: <Result />
   }
 ]);
 

@@ -1,0 +1,25 @@
+.column {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+
+.bt-race {
+    font-family: 'f1-bold';
+    color: white;
+    background-color: black;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    font-size: 1rem;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.bt-race:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.05); 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
+}
