@@ -83,6 +83,7 @@ export default function AppBar() {
                 <button className="subtitle" onClick={() => navigate("/drivers/")}>Drivers</button>
                 <button className="subtitle" onClick={() => navigate("/teams/")}>Teams</button>
                 <button className="subtitle" onClick={() => navigate ("/results/")}>Results</button>
+                <button className="subtitle" onClick={() => navigate ("/news/")}>News</button>
             </div>
             {favoriteTeamCar && (
                 <img src={favoriteTeamCar} className="favorite-team-car" alt="Favorite Team Car" />

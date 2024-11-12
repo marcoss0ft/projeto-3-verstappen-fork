@@ -15,6 +15,7 @@ import Team from './components/Team';
 import Standings from './components/Standings';
 import Results from './components/Results/index.jsx';
 import Result from './components/Result/index.jsx';
+import News from './components/News/index.jsx';
 import './index.css';
 import ApplyTeamColors from './components/ApplyTeamColors/index.jsx';
 
@@ -70,6 +71,10 @@ const router = createBrowserRouter([
   {
     path: "/results/:resultId/",
     element: <Result />
+  },
+  {
+    path: "/news/",
+    element: <News />
   }
 ]);
 

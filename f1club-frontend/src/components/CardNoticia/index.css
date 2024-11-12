@@ -1,0 +1,40 @@
+.card-noticia {
+    text-decoration: none;
+    color: black;
+    width: 18rem;
+    border-radius: 5%;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s;
+    background-color: white;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.card-noticia:hover {
+    transform: scale(1.05);
+}
+
+.card-noticia img {
+    width: 17rem;
+    height: 9rem;
+    margin-top: 0.5rem;
+    align-self: center; 
+}
+
+.card-noticia h2 {
+    font-family: f1-bold;
+    color: #FF1D00;
+    font-size: 1.5rem;
+    margin: 0.5rem;
+    text-align: left; 
+    align-self: flex-start;
+}
+
+.card-noticia p {
+    font-family: f1-regular;
+    font-size: 0.9rem;
+    margin: 0.5rem;
+    text-align: left; 
+    align-self: flex-start; 
+}

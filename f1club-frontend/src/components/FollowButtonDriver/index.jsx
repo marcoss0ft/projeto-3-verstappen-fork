@@ -17,7 +17,7 @@ export default function FollowButtonDriver({ driverId }) {
     const carregaIsFollowing = () => {
         /*
         axios
-            .get(`https://projeto-2-backend-verstappen-front.onrender.com/drivers/`, config)
+            .get(`https://projeto-3-parte-2-verstappen.onrender.com/drivers/`, config)
             .then((response) => {
                 const followedDriver = response.data.find((driver) => driver.driverId === driverId);
                 if (followedDriver) {
@@ -65,7 +65,7 @@ export default function FollowButtonDriver({ driverId }) {
         if (isFollowing) {
             /*
             axios
-                .delete(`https://projeto-2-backend-verstappen-front.onrender.com/drivers/${driverFollowingId}/`, config)
+                .delete(`https://projeto-3-parte-2-verstappen.onrender.com/drivers/${driverFollowingId}/`, config)
                 .then(() => {
                     setIsFollowing(false);
                     setDriverFollowingId(null);
@@ -86,7 +86,7 @@ export default function FollowButtonDriver({ driverId }) {
         } else {
             /*
             axios
-                .post(`https://projeto-2-backend-verstappen-front.onrender.com/drivers/`, { driverId: driverId }, config)
+                .post(`https://projeto-3-parte-2-verstappen.onrender.com/drivers/`, { driverId: driverId }, config)
                 .then((response) => {
                     setIsFollowing(true);
                     setDriverFollowingId(response.data.id);

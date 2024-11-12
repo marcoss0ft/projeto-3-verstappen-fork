@@ -21,7 +21,7 @@ export default function FollowButtonTeam({ teamId }) {
     const carregaIsFollowing = () => {
         /*
         axios
-            .get(`https://projeto-2-backend-verstappen-front-1.onrender.com/teams/`, config)
+            .get(`https://projeto-3-parte-2-verstappen.onrender.com/teams/`, config)
             .then((response) => {
                 const followedTeam = response.data.find((team) => team.teamId === teamId);
                 if (followedTeam) {
@@ -57,7 +57,7 @@ export default function FollowButtonTeam({ teamId }) {
         if (isFollowing) {
             /*
             axios
-                .delete(`https://projeto-2-backend-verstappen-front-1.onrender.com/teams/${teamFollowingId}/`, config)
+                .delete(`https://projeto-3-parte-2-verstappen.onrender.com/teams/${teamFollowingId}/`, config)
                 .then(() => {
                     setIsFollowing(false);
                     setTeamFollowingId(null);
@@ -82,7 +82,7 @@ export default function FollowButtonTeam({ teamId }) {
         } else {
             /*
             axios
-                .get(`https://projeto-2-backend-verstappen-front.onrender.com/teams/`, config)
+                .get(`https://projeto-3-parte-2-verstappen.onrender.com/teams/`, config)
                 .then((response) => {
                     const alreadyFollowing = response.data.some((team) => team.id !== teamFollowingId);
                     if (alreadyFollowing) {
@@ -114,7 +114,7 @@ export default function FollowButtonTeam({ teamId }) {
     const followNewTeam = () => {
         /*
         axios
-            .post(`https://projeto-2-backend-verstappen-front.onrender.com/teams/`, { teamId: teamId }, config)
+            .post(`https://projeto-3-parte-2-verstappen.onrender.com/teams/`, { teamId: teamId }, config)
             .then((response) => {
                 setIsFollowing(true);
                 setTeamFollowingId(response.data.id);
@@ -143,11 +143,11 @@ export default function FollowButtonTeam({ teamId }) {
     const handleSwitchTeam = () => {
         /*
         axios
-            .get(`https://projeto-2-backend-verstappen-front.onrender.com/teams/`, config)
+            .get(`https://projeto-3-parte-2-verstappen.onrender.com/teams/`, config)
             .then((response) => {
                 const currentTeamId = response.data[0].id;
                 localStorage.removeItem("favoriteTeam");
-                return axios.delete(`https://projeto-2-backend-verstappen-front.onrender.com/teams/${currentTeamId}/`, config);
+                return axios.delete(`https://projeto-3-parte-2-verstappen.onrender.com/teams/${currentTeamId}/`, config);
             })
             .then(() => {
                 followNewTeam();

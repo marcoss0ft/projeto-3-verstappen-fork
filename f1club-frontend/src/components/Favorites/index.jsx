@@ -19,7 +19,7 @@ export default function Favorites() {
     const carregaDrivers = () => {
         /*
         axios
-          .get("https://projeto-2-backend-verstappen-front.onrender.com/drivers/", config)
+          .get("https://projeto-3-parte-2-verstappen.onrender.com/drivers/", config)
           .then((response) => setFavoriteDrivers(response.data))
           .catch((error) => {
             console.error("Erro ao carregar drivers favoritos:", error);
@@ -36,7 +36,7 @@ export default function Favorites() {
     const carregaTeam = () => {
         /*
         axios
-          .get("https://projeto-2-backend-verstappen-front.onrender.com/teams/", config)
+          .get("https://projeto-3-parte-2-verstappen.onrender.com/teams/", config)
           .then((response) => setFavoriteTeam(response.data))
           .catch((error) => {
             console.error("Erro ao carregar team favorito:", error);

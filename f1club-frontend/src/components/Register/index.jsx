@@ -20,7 +20,7 @@ export default function Register() {
         try {
             /*
             await axios.post(
-                'https://projeto-2-backend-verstappen-front.onrender.com/users/', 
+                'https://projeto-3-parte-2-verstappen.onrender.com/users/', 
                 JSON.stringify(data), 
                 {
                     headers: {
@@ -41,7 +41,7 @@ export default function Register() {
 
             /*
             const response = await axios.post(
-                'https://projeto-2-backend-verstappen-front.onrender.com/token/', 
+                'https://projeto-3-parte-2-verstappen.onrender.com/token/', 
                 JSON.stringify({ username, password }), 
                 {
                     headers: {
