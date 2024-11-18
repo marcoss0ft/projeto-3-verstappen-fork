@@ -17,33 +17,14 @@ import Results from './components/Results/index.jsx';
 import Result from './components/Result/index.jsx';
 import News from './components/News/index.jsx';
 import './index.css';
+import ApplyTeamColors from './components/ApplyTeamColors/index.jsx';
 
-function applyTeamColors(teamId) {
-  if (teamId === null) {
-
-      document.documentElement.style.setProperty('--sidebar-bg-color', '#807F7F');
-      document.documentElement.style.setProperty('--icon-bg-color', '#FF1D00');
-      document.documentElement.style.setProperty('--appbar-bg-color', '#FF1D00');
-      document.documentElement.style.setProperty('--background-color', '#5A5A5A');
-      console.log('Cores redefinidas para os valores padrão.');
-      return;
-  }
-
-  const colors = teamColors[teamId];
-  if (colors) {
-    document.documentElement.style.setProperty('--sidebar-bg-color', colors.sidebarBgColor);
-    document.documentElement.style.setProperty('--icon-bg-color', colors.iconBgColor);
-    document.documentElement.style.setProperty('--appbar-bg-color', colors.appbarBgColor);
-    document.documentElement.style.setProperty('--background-color', colors.backgroundColor);
-    console.log('Cores aplicadas:', colors);
-  }
-}
 // Aplique as cores ao carregar a aplicação
 const favoriteTeam = localStorage.getItem("favoriteTeam");
 if (favoriteTeam) {
-  applyTeamColors(favoriteTeam);
+  ApplyTeamColors(favoriteTeam);
 } else {
-  applyTeamColors(null); // Cores padrão se não houver time favorito
+  ApplyTeamColors(null); // Cores padrão se não houver time favorito
 }
 
 const router = createBrowserRouter([
