@@ -3,8 +3,28 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Popup from "../Popup";
 import "./index.css";
-import ApplyTeamColors from "../ApplyTeamColors";
+import teamColors from "../TeamColors";
 
+function applyTeamColors(teamId) {
+    if (teamId === null) {
+
+        document.documentElement.style.setProperty('--sidebar-bg-color', '#807F7F');
+        document.documentElement.style.setProperty('--icon-bg-color', '#FF1D00');
+        document.documentElement.style.setProperty('--appbar-bg-color', '#FF1D00');
+        document.documentElement.style.setProperty('--background-color', '#5A5A5A');
+        console.log('Cores redefinidas para os valores padrão.');
+        return;
+    }
+
+    const colors = teamColors[teamId];
+    if (colors) {
+      document.documentElement.style.setProperty('--sidebar-bg-color', colors.sidebarBgColor);
+      document.documentElement.style.setProperty('--icon-bg-color', colors.iconBgColor);
+      document.documentElement.style.setProperty('--appbar-bg-color', colors.appbarBgColor);
+      document.documentElement.style.setProperty('--background-color', colors.backgroundColor);
+      console.log('Cores aplicadas:', colors);
+    }
+}
 
 export default function FollowButtonTeam({ teamId }) {
     const navigate = useNavigate();
@@ -20,13 +40,13 @@ export default function FollowButtonTeam({ teamId }) {
 
     const carregaIsFollowing = () => {
         axios
-            .get(`https://projeto-3-parte-2-verstappen-fork.onrender.com/teams/`, config)
+            .get(`https://projeto-2-backend-verstappen-front-1.onrender.com/teams/`, config)
             .then((response) => {
                 const followedTeam = response.data.find((team) => team.teamId === teamId);
                 if (followedTeam) {
                     setIsFollowing(true);
                     setTeamFollowingId(followedTeam.id);
-                    ApplyTeamColors(teamId); 
+                    applyTeamColors(teamId); 
                 } else {
                     setIsFollowing(false);
                 }
@@ -38,23 +58,20 @@ export default function FollowButtonTeam({ teamId }) {
 
     const handleFollow = () => {
         if (isFollowing) {
-
             axios
-                .delete(`https://projeto-3-parte-2-verstappen-fork.onrender.com/teams/${teamFollowingId}/`, config)
+                .delete(`https://projeto-2-backend-verstappen-front-1.onrender.com/teams/${teamFollowingId}/`, config)
                 .then(() => {
                     setIsFollowing(false);
                     setTeamFollowingId(null);
                     localStorage.removeItem("favoriteTeam");
-                    ApplyTeamColors(null); // Remove as cores se desfavoritar
+                    applyTeamColors(null); // Remove as cores se desfavoritar
                 })
                 .catch((error) => {
                     console.error("Erro ao deixar de seguir piloto:", error);
                 });
-
         } else {
-
             axios
-                .get(`https://projeto-3-parte-2-verstappen-fork.onrender.com/teams/`, config)
+                .get(`https://projeto-2-backend-verstappen-front.onrender.com/teams/`, config)
                 .then((response) => {
                     const alreadyFollowing = response.data.some((team) => team.id !== teamFollowingId);
                     if (alreadyFollowing) {
@@ -71,27 +88,26 @@ export default function FollowButtonTeam({ teamId }) {
 
     const followNewTeam = () => {
         axios
-            .post(`https://projeto-3-parte-2-verstappen-fork.onrender.com/teams/`, { teamId: teamId }, config)
+            .post(`https://projeto-2-backend-verstappen-front.onrender.com/teams/`, { teamId: teamId }, config)
             .then((response) => {
                 setIsFollowing(true);
                 setTeamFollowingId(response.data.id);
                 localStorage.setItem("favoriteTeam", teamId);
-                ApplyTeamColors(teamId); // Aplica as novas cores
+                applyTeamColors(teamId); // Aplica as novas cores
                 setShowPopup(false);
             })
             .catch((error) => {
                 console.error("Erro ao seguir piloto:", error);
             });
-
     };
 
     const handleSwitchTeam = () => {
         axios
-            .get(`https://projeto-3-parte-2-verstappen-fork.onrender.com/teams/`, config)
+            .get(`https://projeto-2-backend-verstappen-front.onrender.com/teams/`, config)
             .then((response) => {
                 const currentTeamId = response.data[0].id;
                 localStorage.removeItem("favoriteTeam");
-                return axios.delete(`https://projeto-3-parte-2-verstappen.onrender.com/teams/${currentTeamId}/`, config);
+                return axios.delete(`https://projeto-2-backend-verstappen-front.onrender.com/teams/${currentTeamId}/`, config);
             })
             .then(() => {
                 followNewTeam();
