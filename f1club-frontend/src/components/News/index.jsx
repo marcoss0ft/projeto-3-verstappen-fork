@@ -8,18 +8,13 @@ import "./index.css";
 export default function News() {
     const [noticias, setNoticias] = useState([]); 
 
+
     useEffect(() => {
-        axios.get("http://127.0.0.1:8000/news/")
+        axios.get("https://projeto-3-parte-2-verstappen-fork.onrender.com/news/")
             .then((response) => setNoticias(response.data))
             .catch((error) => console.error("Error fetching news:", error));
     }, []);
-    /*
-    useEffect(() => {
-        axios.get("https://projeto-3-parte-2-verstappen.onrender.com/news/")
-            .then((response) => setNoticias(response.data))
-            .catch((error) => console.error("Error fetching news:", error));
-    }, []);
-    */
+
     return (
         <>
             <AppBar />
