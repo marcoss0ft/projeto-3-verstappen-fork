@@ -16,10 +16,9 @@ export default function Login() {
         const data = {
             username: username,
             password: password,
-        }
-        /*
+        };
         axios
-            .post('https://projeto-3-parte-2-verstappen.onrender.com/token/', data)
+            .post('https://projeto-3-parte-2-verstappen-fork.onrender.com/token/', data)
             .then((response) => {
                 const token = response.data.token;
                 localStorage.setItem('username', username);
@@ -32,21 +31,6 @@ export default function Login() {
                 console.log(`Erro no login: ${e}`);
                 setError(true);
             });
-        */
-        axios
-        .post('http://127.0.0.1:8000/token/', data)
-        .then((response) => {
-            const token = response.data.token;
-            localStorage.setItem('username', username);
-            localStorage.setItem('token', token);
-            setUsername('');
-            setPassword('');
-            navigate('/');
-        })
-        .catch((e) => {
-            console.log(`Erro no login: ${e}`);
-            setError(true);
-        });
     }
 
     return (

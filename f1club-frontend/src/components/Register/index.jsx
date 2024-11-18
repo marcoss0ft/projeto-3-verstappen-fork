@@ -18,19 +18,9 @@ export default function Register() {
         const data = { username, email, password };
 
         try {
-            /*
+
             await axios.post(
-                'https://projeto-3-parte-2-verstappen.onrender.com/users/', 
-                JSON.stringify(data), 
-                {
-                    headers: {
-                        'Content-Type': 'application/json',
-                    }
-                }
-            );
-            */
-            await axios.post(
-                'http://127.0.0.1:8000/users/', 
+                'https://projeto-3-parte-2-verstappen-fork.onrender.com/users/', 
                 JSON.stringify(data), 
                 {
                     headers: {
@@ -39,9 +29,8 @@ export default function Register() {
                 }
             );
 
-            /*
             const response = await axios.post(
-                'https://projeto-3-parte-2-verstappen.onrender.com/token/', 
+                'https://projeto-3-parte-2-verstappen-fork.onrender.com/token/', 
                 JSON.stringify({ username, password }), 
                 {
                     headers: {
@@ -49,17 +38,7 @@ export default function Register() {
                     }
                 }
             );
-            */
 
-            const response = await axios.post(
-                'http://127.0.0.1:8000/token/', 
-                JSON.stringify({ username, password }), 
-                {
-                    headers: {
-                        'Content-Type': 'application/json',
-                    }
-                }
-            );
 
             const token = response.data.token;
             localStorage.setItem('username', username);

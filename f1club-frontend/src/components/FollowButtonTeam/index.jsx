@@ -19,25 +19,8 @@ export default function FollowButtonTeam({ teamId }) {
     };
 
     const carregaIsFollowing = () => {
-        /*
         axios
-            .get(`https://projeto-3-parte-2-verstappen.onrender.com/teams/`, config)
-            .then((response) => {
-                const followedTeam = response.data.find((team) => team.teamId === teamId);
-                if (followedTeam) {
-                    setIsFollowing(true);
-                    setTeamFollowingId(followedTeam.id);
-                    ApplyTeamColors(teamId); 
-                } else {
-                    setIsFollowing(false);
-                }
-            })
-            .catch((error) => {
-                console.error("Erro ao carregar estado de seguir piloto:", error);
-            });
-        */
-            axios
-            .get(`http://127.0.0.1:8000/teams/`, config)
+            .get(`https://projeto-3-parte-2-verstappen-fork.onrender.com/teams/`, config)
             .then((response) => {
                 const followedTeam = response.data.find((team) => team.teamId === teamId);
                 if (followedTeam) {
@@ -55,9 +38,9 @@ export default function FollowButtonTeam({ teamId }) {
 
     const handleFollow = () => {
         if (isFollowing) {
-            /*
+
             axios
-                .delete(`https://projeto-3-parte-2-verstappen.onrender.com/teams/${teamFollowingId}/`, config)
+                .delete(`https://projeto-3-parte-2-verstappen-fork.onrender.com/teams/${teamFollowingId}/`, config)
                 .then(() => {
                     setIsFollowing(false);
                     setTeamFollowingId(null);
@@ -67,36 +50,11 @@ export default function FollowButtonTeam({ teamId }) {
                 .catch((error) => {
                     console.error("Erro ao deixar de seguir piloto:", error);
                 });
-            */
-                axios
-                .delete(`http://127.0.0.1:8000/teams/${teamFollowingId}/`, config)
-                .then(() => {
-                    setIsFollowing(false);
-                    setTeamFollowingId(null);
-                    localStorage.removeItem("favoriteTeam");
-                    ApplyTeamColors(null); // Remove as cores se desfavoritar
-                })
-                .catch((error) => {
-                    console.error("Erro ao deixar de seguir piloto:", error);
-                });
+
         } else {
-            /*
+
             axios
-                .get(`https://projeto-3-parte-2-verstappen.onrender.com/teams/`, config)
-                .then((response) => {
-                    const alreadyFollowing = response.data.some((team) => team.id !== teamFollowingId);
-                    if (alreadyFollowing) {
-                        setShowPopup(true);
-                    } else {
-                        followNewTeam();
-                    }
-                })
-                .catch((error) => {
-                    console.error("Erro ao verificar times seguidos:", error);
-                });
-            */
-                axios
-                .get(`http://127.0.0.1:8000/teams/`, config)
+                .get(`https://projeto-3-parte-2-verstappen-fork.onrender.com/teams/`, config)
                 .then((response) => {
                     const alreadyFollowing = response.data.some((team) => team.id !== teamFollowingId);
                     if (alreadyFollowing) {
@@ -112,9 +70,8 @@ export default function FollowButtonTeam({ teamId }) {
     };
 
     const followNewTeam = () => {
-        /*
         axios
-            .post(`https://projeto-3-parte-2-verstappen.onrender.com/teams/`, { teamId: teamId }, config)
+            .post(`https://projeto-3-parte-2-verstappen-fork.onrender.com/teams/`, { teamId: teamId }, config)
             .then((response) => {
                 setIsFollowing(true);
                 setTeamFollowingId(response.data.id);
@@ -125,43 +82,16 @@ export default function FollowButtonTeam({ teamId }) {
             .catch((error) => {
                 console.error("Erro ao seguir piloto:", error);
             });
-        */
-        axios
-        .post(`http://127.0.0.1:8000/teams/`, { teamId: teamId }, config)
-        .then((response) => {
-            setIsFollowing(true);
-            setTeamFollowingId(response.data.id);
-            localStorage.setItem("favoriteTeam", teamId);
-            ApplyTeamColors(teamId); // Aplica as novas cores
-            setShowPopup(false);
-        })
-        .catch((error) => {
-            console.error("Erro ao seguir piloto:", error);
-        });
+
     };
 
     const handleSwitchTeam = () => {
-        /*
         axios
-            .get(`https://projeto-3-parte-2-verstappen.onrender.com/teams/`, config)
+            .get(`https://projeto-3-parte-2-verstappen-fork.onrender.com/teams/`, config)
             .then((response) => {
                 const currentTeamId = response.data[0].id;
                 localStorage.removeItem("favoriteTeam");
                 return axios.delete(`https://projeto-3-parte-2-verstappen.onrender.com/teams/${currentTeamId}/`, config);
-            })
-            .then(() => {
-                followNewTeam();
-            })
-            .catch((error) => {
-                console.error("Erro ao trocar de time seguido:", error);
-            });
-        */
-            axios
-            .get(`http://127.0.0.1:8000/teams/`, config)
-            .then((response) => {
-                const currentTeamId = response.data[0].id;
-                localStorage.removeItem("favoriteTeam");
-                return axios.delete(`http://127.0.0.1:8000/teams/${currentTeamId}/`, config);
             })
             .then(() => {
                 followNewTeam();

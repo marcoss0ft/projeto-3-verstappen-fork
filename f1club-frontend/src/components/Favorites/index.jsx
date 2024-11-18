@@ -17,16 +17,9 @@ export default function Favorites() {
       };
 
     const carregaDrivers = () => {
-        /*
+
         axios
-          .get("https://projeto-3-parte-2-verstappen.onrender.com/drivers/", config)
-          .then((response) => setFavoriteDrivers(response.data))
-          .catch((error) => {
-            console.error("Erro ao carregar drivers favoritos:", error);
-          });
-        */
-        axios
-          .get("http://127.0.0.1:8000/drivers/", config)
+          .get("https://projeto-3-parte-2-verstappen-fork.onrender.com/drivers/", config)
           .then((response) => setFavoriteDrivers(response.data))
           .catch((error) => {
             console.error("Erro ao carregar drivers favoritos:", error);
@@ -34,16 +27,9 @@ export default function Favorites() {
       };
     
     const carregaTeam = () => {
-        /*
+
         axios
-          .get("https://projeto-3-parte-2-verstappen.onrender.com/teams/", config)
-          .then((response) => setFavoriteTeam(response.data))
-          .catch((error) => {
-            console.error("Erro ao carregar team favorito:", error);
-          });
-        */
-          axios
-          .get("http://127.0.0.1:8000/teams/", config)
+          .get("https://projeto-3-parte-2-verstappen-fork.onrender.com/teams/", config)
           .then((response) => setFavoriteTeam(response.data))
           .catch((error) => {
             console.error("Erro ao carregar team favorito:", error);
